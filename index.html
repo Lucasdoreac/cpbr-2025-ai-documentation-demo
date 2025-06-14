@@ -1,0 +1,637 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Documentação em Tempo Real na Era da IA | CPBR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .reveal {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .reveal .slides section {
+            text-align: left;
+            padding: 40px;
+        }
+        .reveal h1, .reveal h2, .reveal h3 {
+            color: #00ff88;
+            font-weight: bold;
+            text-transform: none;
+        }
+        .reveal .title-slide {
+            text-align: center;
+        }
+        .reveal .terminal {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            color: #00ff88;
+            border: 2px solid #333;
+            margin: 20px 0;
+        }
+        .reveal .command {
+            color: #ffff00;
+            font-weight: bold;
+        }
+        .reveal .output {
+            color: #ffffff;
+            opacity: 0.8;
+        }
+        .reveal .highlight {
+            background: linear-gradient(45deg, #ff006e, #8338ec);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+        .reveal .demo-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #00ff88;
+        }
+        .reveal .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+        .reveal .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 8px;
+            border: 2px solid #00ff88;
+        }
+        .reveal .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #00ff88;
+        }
+        .reveal .live-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #ff0000;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+        .qr-code {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .architecture-diagram {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px 0;
+        }
+        .arch-component {
+            background: rgba(131, 56, 236, 0.2);
+            border: 2px solid #8338ec;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            min-width: 150px;
+        }
+        .arrow {
+            font-size: 2em;
+            color: #00ff88;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 1: Título -->
+            <section class="title-slide">
+                <h1><i class="fas fa-robot"></i> Documentação 4.0</h1>
+                <h2>Na Era da Inteligência Artificial</h2>
+                <p><span class="live-indicator"></span> <strong>DEMONSTRAÇÃO AO VIVO</strong></p>
+                <p>Campus Party Brasil 2025</p>
+                <div class="qr-code">
+                    <i class="fas fa-qrcode" style="font-size: 3em; color: #00ff88;"></i>
+                    <span style="margin-left: 20px;">
+                        <strong>Acesse em tempo real:</strong><br>
+                        <code style="color: #ffff00;">http://localhost:3000</code>
+                    </span>
+                </div>
+            </section>
+
+            <!-- Slide 2: O Problema -->
+            <section>
+                <h2><i class="fas fa-exclamation-triangle"></i> O Problema</h2>
+                <div class="demo-box">
+                    <h3>Documentação Tradicional:</h3>
+                    <ul>
+                        <li><i class="fas fa-clock"></i> Desatualizada em minutos</li>
+                        <li><i class="fas fa-user-slash"></i> Dependente de humanos</li>
+                        <li><i class="fas fa-disconnect"></i> Desconectada do código</li>
+                        <li><i class="fas fa-snail"></i> Processo manual lento</li>
+                    </ul>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">70%</div>
+                        <div>docs desatualizadas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4h</div>
+                        <div>tempo perdido/dia</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$50M</div>
+                        <div>custo anual</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: A Revolução -->
+            <section>
+                <h2><i class="fas fa-rocket"></i> A Revolução de 2024</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">184B</div>
+                        <div>Mercado IA (USD)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8x</div>
+                        <div>Investimento cresceu</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">78%</div>
+                        <div>Empresas usam IA</div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <h3><span class="highlight">ROI Comprovado:</span></h3>
+                    <p><strong>$3.7</strong> de retorno para cada <strong>$1</strong> investido em IA</p>
+                    <p><i class="fas fa-arrow-up"></i> <strong>72%</strong> das empresas viram aumento de produtividade</p>
+                </div>
+            </section>
+
+            <!-- Slide 4: Arquitetura da Solução -->
+            <section>
+                <h2><i class="fas fa-sitemap"></i> Arquitetura da Solução</h2>
+                <div class="architecture-diagram">
+                    <div class="arch-component">
+                        <i class="fas fa-code" style="font-size: 2em; color: #00ff88;"></i>
+                        <h4>Claude Code</h4>
+                        <p>Engine IA</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="arch-component">
+                        <i class="fas fa-eye" style="font-size: 2em; color: #8338ec;"></i>
+                        <h4>File Watcher</h4>
+                        <p>Monitor</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="arch-component">
+                        <i class="fas fa-file-alt" style="font-size: 2em; color: #ff006e;"></i>
+                        <h4>Auto Docs</h4>
+                        <p>Geração</p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="arch-component">
+                        <i class="fas fa-globe" style="font-size: 2em; color: #ffff00;"></i>
+                        <h4>Live Server</h4>
+                        <p>Acesso</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Demo Setup -->
+            <section>
+                <h2><i class="fas fa-play-circle"></i> Demonstração: Setup</h2>
+                <div class="terminal">
+                    <div class="command"># 1. Criar estrutura do projeto</div>
+                    <div class="output">mkdir ai-docs-demo && cd ai-docs-demo</div>
+                    <br>
+                    <div class="command"># 2. Inicializar projeto Node.js</div>
+                    <div class="output">npm init -y</div>
+                    <br>
+                    <div class="command"># 3. Instalar dependências</div>
+                    <div class="output">npm install express socket.io chokidar markdown-it</div>
+                    <br>
+                    <div class="command"># 4. Estrutura de diretórios</div>
+                    <div class="output">mkdir src docs public</div>
+                </div>
+                <p><span class="live-indicator"></span> <strong>Execute estes comandos agora!</strong></p>
+            </section>
+
+            <!-- Slide 6: Código do File Watcher -->
+            <section>
+                <h2><i class="fas fa-eye"></i> File Watcher Inteligente</h2>
+                <div class="terminal">
+                    <div class="command"># Criar watcher.js</div>
+                    <div class="output">touch watcher.js</div>
+                </div>
+                <pre><code class="javascript" data-line-numbers>
+const chokidar = require('chokidar');
+const fs = require('fs');
+const path = require('path');
+
+class AIDocWatcher {
+    constructor() {
+        this.watcher = null;
+        this.lastChange = new Date();
+    }
+
+    start() {
+        console.log('🤖 AI Doc Watcher iniciado...');
+        
+        this.watcher = chokidar.watch('./src/**/*.js', {
+            ignored: /node_modules/,
+            persistent: true
+        });
+
+        this.watcher.on('change', this.handleFileChange.bind(this));
+        this.watcher.on('add', this.handleFileAdd.bind(this));
+    }
+
+    async handleFileChange(filePath) {
+        console.log(`📝 Arquivo modificado: ${filePath}`);
+        await this.generateDocumentation(filePath);
+    }
+
+    async generateDocumentation(filePath) {
+        // Integração com Claude Code aqui
+        const content = fs.readFileSync(filePath, 'utf8');
+        const docPath = this.getDocPath(filePath);
+        
+        // Simular geração de documentação IA
+        const aiDoc = this.generateAIDoc(content, filePath);
+        fs.writeFileSync(docPath, aiDoc);
+        
+        console.log(`✅ Documentação atualizada: ${docPath}`);
+    }
+}
+
+module.exports = AIDocWatcher;
+                </code></pre>
+            </section>
+
+            <!-- Slide 7: Servidor Web -->
+            <section>
+                <h2><i class="fas fa-server"></i> Servidor Web Live</h2>
+                <div class="terminal">
+                    <div class="command"># Criar server.js</div>
+                    <div class="output">touch server.js</div>
+                </div>
+                <pre><code class="javascript" data-line-numbers>
+const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
+const fs = require('fs');
+const path = require('path');
+
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
+
+app.use(express.static('public'));
+app.use('/docs', express.static('docs'));
+
+// WebSocket para updates em tempo real
+io.on('connection', (socket) => {
+    console.log('👥 Cliente conectado');
+    
+    // Monitorar mudanças na documentação
+    fs.watch('./docs', (eventType, filename) => {
+        if (filename.endsWith('.md')) {
+            const content = fs.readFileSync(`./docs/${filename}`, 'utf8');
+            socket.emit('docUpdate', {
+                filename: filename,
+                content: content,
+                timestamp: new Date()
+            });
+        }
+    });
+});
+
+server.listen(3000, () => {
+    console.log('🌐 Servidor rodando em http://localhost:3000');
+});
+                </code></pre>
+            </section>
+
+            <!-- Slide 8: Claude Code Integration -->
+            <section>
+                <h2><i class="fas fa-brain"></i> Integração Claude Code</h2>
+                <div class="terminal">
+                    <div class="command"># Script de automação</div>
+                    <div class="output">touch claude-automation.js</div>
+                </div>
+                <pre><code class="javascript" data-line-numbers>
+const { spawn } = require('child_process');
+const fs = require('fs');
+
+class ClaudeCodeIntegration {
+    constructor() {
+        this.claudeProcess = null;
+    }
+
+    async analyzeAndDocument(filePath) {
+        const prompt = `
+        Analise este arquivo e gere documentação completa:
+        - Funcionalidade principal
+        - Parâmetros e retornos
+        - Exemplos de uso
+        - Diagramas mermaid quando apropriado
+        
+        Arquivo: ${filePath}
+        `;
+
+        return new Promise((resolve, reject) => {
+            const claude = spawn('claude', [
+                'code', 
+                '--prompt', prompt,
+                '--file', filePath
+            ]);
+
+            let output = '';
+            claude.stdout.on('data', (data) => {
+                output += data.toString();
+            });
+
+            claude.on('close', (code) => {
+                if (code === 0) {
+                    resolve(this.formatDocumentation(output));
+                } else {
+                    reject(new Error(`Claude Code falhou: ${code}`));
+                }
+            });
+        });
+    }
+
+    formatDocumentation(rawOutput) {
+        return `# Documentação Auto-Gerada
+        
+${rawOutput}
+
+---
+*Gerado automaticamente em ${new Date().toISOString()}*
+*Powered by Claude Code + IA*
+        `;
+    }
+}
+                </code></pre>
+            </section>
+
+            <!-- Slide 9: Demo Prática -->
+            <section>
+                <h2><i class="fas fa-magic"></i> Demonstração Prática</h2>
+                <div class="demo-box">
+                    <h3>Agora vamos ver a mágica acontecer:</h3>
+                </div>
+                <div class="terminal">
+                    <div class="command"># 1. Iniciar o servidor</div>
+                    <div class="output">node server.js</div>
+                    <br>
+                    <div class="command"># 2. Iniciar o watcher (novo terminal)</div>
+                    <div class="output">node watcher.js</div>
+                    <br>
+                    <div class="command"># 3. Criar arquivo de exemplo</div>
+                    <div class="output">echo "function soma(a, b) { return a + b; }" > src/calculator.js</div>
+                    <br>
+                    <div class="command"># 4. Modificar arquivo e ver docs atualizarem</div>
+                    <div class="output">echo "// Função avançada" >> src/calculator.js</div>
+                </div>
+                <p><strong>🔴 LIVE:</strong> A plateia pode acompanhar em <code>localhost:3000</code></p>
+            </section>
+
+            <!-- Slide 10: Comandos para Claude Code -->
+            <section>
+                <h2><i class="fas fa-terminal"></i> Comandos Claude Code</h2>
+                <div class="terminal">
+                    <div class="command"># Gerar documentação completa de API</div>
+                    <div class="output">claude code "Documente esta API REST com exemplos de uso e swagger"</div>
+                    <br>
+                    <div class="command"># Criar README interativo</div>
+                    <div class="output">claude code "Crie README.md com badges, instalação e exemplos"</div>
+                    <br>
+                    <div class="command"># Gerar testes automatizados</div>
+                    <div class="output">claude code "Gere testes unitários para todos os arquivos em src/"</div>
+                    <br>
+                    <div class="command"># Análise de arquitetura</div>
+                    <div class="output">claude code "Analise a arquitetura e sugira melhorias"</div>
+                    <br>
+                    <div class="command"># Documentação de deploy</div>
+                    <div class="output">claude code "Crie guia de deploy com Docker e CI/CD"</div>
+                </div>
+            </section>
+
+            <!-- Slide 11: Resultados em Tempo Real -->
+            <section>
+                <h2><i class="fas fa-chart-line"></i> Resultados em Tempo Real</h2>
+                <div id="live-stats" class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="files-monitored">0</div>
+                        <div>Arquivos Monitorados</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="docs-generated">0</div>
+                        <div>Docs Gerados</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="time-saved">0</div>
+                        <div>Tempo Economizado (min)</div>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <h3><span class="live-indicator"></span> Atualizações em Tempo Real:</h3>
+                    <div id="live-log" style="height: 200px; overflow-y: auto; font-family: monospace; font-size: 0.8em;">
+                        <!-- Log entries will be added here via JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 12: Ferramentas do Mercado -->
+            <section>
+                <h2><i class="fas fa-tools"></i> Ferramentas do Mercado</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="demo-box">
+                        <h3><i class="fab fa-confluence"></i> Confluence AI</h3>
+                        <ul>
+                            <li>Resumos automáticos</li>
+                            <li>Geração de conteúdo</li>
+                            <li>Atlassian Intelligence</li>
+                        </ul>
+                    </div>
+                    <div class="demo-box">
+                        <h3><i class="fas fa-notes-medical"></i> Notion AI</h3>
+                        <ul>
+                            <li>Workspace integrado</li>
+                            <li>Busca inteligente</li>
+                            <li>Colaboração IA</li>
+                        </ul>
+                    </div>
+                    <div class="demo-box">
+                        <h3><i class="fab fa-git-alt"></i> GitBook</h3>
+                        <ul>
+                            <li>Docs técnicos</li>
+                            <li>Sync com repos</li>
+                            <li>AI workflows</li>
+                        </ul>
+                    </div>
+                    <div class="demo-box">
+                        <h3><i class="fas fa-robot"></i> Claude Code</h3>
+                        <ul>
+                            <li>Análise contextual</li>
+                            <li>Geração automática</li>
+                            <li>Integração terminal</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 13: Casos de Sucesso -->
+            <section>
+                <h2><i class="fas fa-trophy"></i> Casos de Sucesso</h2>
+                <div class="demo-box">
+                    <h3><i class="fas fa-building"></i> Lumen</h3>
+                    <p>Reduziu preparação de vendas de <strong>4h → 15min</strong></p>
+                    <p>Economia anual: <span class="highlight">$50 milhões</span></p>
+                </div>
+                <div class="demo-box">
+                    <h3><i class="fas fa-newspaper"></i> Thomson Reuters</h3>
+                    <p>Processamento <strong>10x mais rápido</strong> com Gemini Pro</p>
+                    <p>Context window: <span class="highlight">2 milhões de tokens</span></p>
+                </div>
+                <div class="demo-box">
+                    <h3><i class="fas fa-video"></i> Vimeo</h3>
+                    <p>Automação de notas e resumos com Google Meet</p>
+                    <p>Foco liberado para <span class="highlight">colaboração criativa</span></p>
+                </div>
+            </section>
+
+            <!-- Slide 14: Próximos Passos -->
+            <section>
+                <h2><i class="fas fa-rocket"></i> Próximos Passos</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h3><i class="fas fa-flask"></i> Implementação</h3>
+                        <ol>
+                            <li>Escolher ferramenta piloto</li>
+                            <li>Definir métricas de ROI</li>
+                            <li>Treinar equipes</li>
+                            <li>Escalar gradualmente</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-chart-bar"></i> Métricas</h3>
+                        <ul>
+                            <li>Tempo economizado</li>
+                            <li>Qualidade do conteúdo</li>
+                            <li>Satisfação da equipe</li>
+                            <li>Atualização docs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="demo-box">
+                    <h3><i class="fas fa-crystal-ball"></i> Tendências 2025</h3>
+                    <p><strong>Agentic AI:</strong> 12% das implementações</p>
+                    <p><strong>RAG Dominante:</strong> 51% de adoção</p>
+                    <p><strong>Multi-Modelo:</strong> 3+ LLMs por empresa</p>
+                </div>
+            </section>
+
+            <!-- Slide 15: Q&A e Recursos -->
+            <section class="title-slide">
+                <h1><i class="fas fa-question-circle"></i> Perguntas?</h1>
+                <div class="qr-code">
+                    <i class="fas fa-qrcode" style="font-size: 4em; color: #00ff88;"></i>
+                    <div style="margin-left: 30px; text-align: left;">
+                        <h3>Recursos:</h3>
+                        <p><i class="fas fa-globe"></i> Demo: <code>localhost:3000</code></p>
+                        <p><i class="fab fa-github"></i> Código: <code>github.com/seu-repo</code></p>
+                        <p><i class="fas fa-envelope"></i> Contato: <code>seu@email.com</code></p>
+                    </div>
+                </div>
+                <p><span class="highlight">Obrigado!</span></p>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        // Inicializar Reveal.js
+        Reveal.initialize({
+            hash: true,
+            plugins: [ RevealHighlight, RevealMarkdown, RevealNotes ],
+            transition: 'slide',
+            backgroundTransition: 'fade'
+        });
+
+        // Simulação de dados em tempo real
+        let filesMonitored = 0;
+        let docsGenerated = 0;
+        let timeSaved = 0;
+
+        function updateStats() {
+            document.getElementById('files-monitored').textContent = filesMonitored;
+            document.getElementById('docs-generated').textContent = docsGenerated;
+            document.getElementById('time-saved').textContent = timeSaved;
+        }
+
+        function addLogEntry(message) {
+            const logDiv = document.getElementById('live-log');
+            const entry = document.createElement('div');
+            entry.innerHTML = `<span style="color: #00ff88;">[${new Date().toLocaleTimeString()}]</span> ${message}`;
+            logDiv.appendChild(entry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        // Simular atividade em tempo real
+        setInterval(() => {
+            const actions = [
+                'Arquivo src/api.js modificado',
+                'Documentação gerada automaticamente',
+                'README.md atualizado',
+                'Testes gerados com Claude Code',
+                'Swagger docs sincronizados'
+            ];
+            
+            const action = actions[Math.floor(Math.random() * actions.length)];
+            addLogEntry(action);
+            
+            if (Math.random() > 0.7) {
+                filesMonitored++;
+                docsGenerated++;
+                timeSaved += Math.floor(Math.random() * 5) + 1;
+                updateStats();
+            }
+        }, 3000);
+
+        // WebSocket para updates reais (quando servidor estiver rodando)
+        try {
+            const socket = io();
+            socket.on('docUpdate', (data) => {
+                addLogEntry(`📝 ${data.filename} atualizado via IA`);
+                docsGenerated++;
+                updateStats();
+            });
+        } catch (e) {
+            console.log('WebSocket não disponível - usando simulação');
+        }
+
+        // Inicializar stats
+        updateStats();
+        addLogEntry('Sistema de documentação IA iniciado 🤖');
+    </script>
+</body>
+</html>
